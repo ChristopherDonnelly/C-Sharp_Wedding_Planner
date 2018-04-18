@@ -1,0 +1,36 @@
+@model Wedding_Planner.Models.WeddingInfo
+@{
+    ViewData["Title"] = "Plan Your Wedding";
+}
+
+<div class="row">
+    <div class="col-8 mx-auto mt-5">
+        <form asp-controller="Dashboard" asp-action="CreatePlan" method="post" class="form-control">
+            <input asp-for="CreatedById" type="hidden" />
+            <h2 class="text-center">@ViewData["Title"]</h2>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<label asp-for="WedderOne" class="d-inline-block col-3 p-0 text-right"></label>
+            	<input asp-for="WedderOne" class="form-control d-inline-block col-8 m-auto" placeholder="Enter Wedder One" aria-label="Enter Wedder One" />
+                <span asp-validation-for="WedderOne" class="d-block pl-3 offset-3 text-danger"></span>
+	    	</div>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<label asp-for="WedderTwo" class="d-inline-block col-3 p-0 text-right"></label>
+            	<input asp-for="WedderTwo" class="form-control d-inline-block col-8 m-auto" placeholder="Enter Wedder Two" aria-label="Enter Wedder Two" />
+                <span asp-validation-for="WedderTwo" class="d-block pl-3 offset-3 text-danger"></span>
+	    	</div>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<label asp-for="WeddingDate" class="d-inline-block col-3 p-0 text-right"></label>
+            	<input asp-for="WeddingDate" class="form-control d-inline-block col-8 m-auto" placeholder="Enter Wedding Date" aria-label="Enter Wedding Date" type="date" />
+                <span asp-validation-for="WeddingDate" class="d-block pl-3 offset-3 text-danger"></span>
+	    	</div>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2">
+            	<label asp-for="WeddingAddress" class="d-inline-block col-3 p-0 text-right"></label>
+            	<input asp-for="WeddingAddress" class="form-control d-inline-block col-8 m-auto" placeholder="Enter Wedding Address" aria-label="Enter Wedding Address" />
+                <span asp-validation-for="WeddingAddress" class="d-block pl-3 offset-3 text-danger"></span>
+	    	</div>
+            <div class="col-12 d-inline-block p-0 align-text-top my-2 text-right pr-5">
+            	<button class="btn btn-dark" type="submit">Create</button>
+	    	</div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+@model Wedding_Planner.Models.WeddingInfo
+@{
+    ViewData["Title"] = $"{@Model.WedderOne} and {@Model.WedderTwo}'s Wedding";
+}
+
+<div class="row mt-5">
+    <div class="col-12">
+        <h1>@Html.DisplayFor(modelItem => @Model.WedderOne) and @Html.DisplayFor(modelItem => @Model.WedderTwo)'s Wedding</h1>
+    </div>
+    <div class="col-6 mt-5">
+        <h4>Date: @Model.WeddingDate.ToString("MMMMM, d yyyy")</h4>
+        <h5 class="mt-5">Guests:</h5>
+        @{
+            foreach(WeddingPlan user in @Model.Guests){
+                <p class="pl-4">@Html.DisplayFor(modelItem => @user.Guest.FirstName) @Html.DisplayFor(modelItem => @user.Guest.LastName)</p>
+            }
+        }
+    </div>
+    <div class="col-6 mt-5">
+        <div class="intrinsic-container intrinsic-container-4x3">
+            <iframe frameborder="0" class="border border-secondary" src="https://www.google.com/maps/embed/v1/search?q=@Model.WeddingAddress&key=AIzaSyBAs3P2N6oo8MXY1qeu_LwfJbf6bv_CBvc"></iframe>
+        </div>
+    </div>
+</div>
