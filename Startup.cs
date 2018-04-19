@@ -37,7 +37,7 @@ namespace Wedding_Planner
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Shared/Error");
             }
 
             app.UseSession();
