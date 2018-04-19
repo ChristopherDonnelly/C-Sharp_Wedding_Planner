@@ -35,10 +35,6 @@ namespace Wedding_Planner
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Shared/Error");
-            }
 
             app.UseSession();
             app.UseStaticFiles();
